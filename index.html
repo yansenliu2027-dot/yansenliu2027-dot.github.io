@@ -22,6 +22,148 @@
 	<link rel="stylesheet" href="css/magnific-popup.css"/>
 	<link rel="stylesheet" href="css/owl.carousel.min.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
+	
+	<style>
+		.certificate-link:hover .certificate-preview {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+		}
+		.certificate-link {
+			text-decoration: none;
+		}
+		.certificate-link:hover {
+			text-decoration: none;
+		}
+		
+		/* Artistic Logo Styling */
+		.logo-text {
+			font-family: 'Poppins', sans-serif;
+			font-size: 24px;
+			font-weight: 700;
+			color: #111111;
+			letter-spacing: 1px;
+			position: relative;
+			line-height: 1.2;
+			padding-top: 12px;
+			transition: all 0.3s ease;
+		}
+		
+		.logo-text:hover {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
+		
+		.logo-text::after {
+			content: '';
+			position: absolute;
+			bottom: -2px;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			transform: scaleX(0);
+			transition: transform 0.3s ease;
+		}
+		
+		.site-logo:hover .logo-text::after {
+			transform: scaleX(1);
+		}
+		
+		/* Reduce basketball image size */
+		.about-section figure img {
+			max-width: 70%;
+			height: auto;
+			border-radius: 10px;
+			box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+		}
+		
+		/* Hero section positioned below navigation */
+		.hero-section {
+			position: relative;
+			margin-top: 110px;
+			height: 80vh;
+			min-height: 560px;
+			max-height: 900px;
+			max-width: 1400px;
+			margin-left: auto;
+			margin-right: auto;
+			border-radius: 26px;
+			overflow: hidden;
+			box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+			background: radial-gradient(120% 120% at 15% 15%, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0)) , linear-gradient(135deg, #0f172a 0%, #1f2937 65%, #111827 100%);
+		}
+		
+		.hero-section .hero-container {
+			height: 100%;
+			border-radius: 26px;
+			overflow: hidden;
+			position: relative;
+		}
+		
+		.hero-slider,
+		.hero-slider .owl-stage-outer,
+		.hero-slider .owl-stage,
+		.hero-slider .owl-item,
+		.hero-slide {
+			height: 100%;
+		}
+		
+		.hero-slider {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 0;
+		}
+		
+		.hero-slide {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+		
+		.hero-slide::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(180deg, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.55) 100%);
+		}
+		
+		.hero-content {
+			position: absolute;
+			z-index: 2;
+			color: white;
+			text-align: center;
+			bottom: 40px;
+			left: 50%;
+			transform: translateX(-50%);
+			max-width: 720px;
+		}
+		
+		.hero-section .owl-dots {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 28px;
+			z-index: 3;
+			display: flex;
+			gap: 8px;
+		}
+		
+		.hero-section .owl-dots .owl-dot span {
+			width: 10px;
+			height: 10px;
+		}
+		
+		.hero-section .owl-dots .owl-dot.active span {
+			width: 24px;
+		}
+	</style>
 
 	<!--[if lt IE 9]>
 	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -42,7 +184,7 @@
 			<div class="header-warp">
 				<!-- Site Logo -->
 				<a href="#" class="site-logo">
-					<img src="img/RuiLogo.png" alt="">
+					<div class="logo-text">Eason</div>
 				</a>
 				<!-- Site Menu -->
 				<div class="responsive-switch"><i class="fa fa-bars"></i></div>
@@ -65,10 +207,25 @@
 	
 
 	<!-- Hero section start -->
-	<section class="hero-section set-bg" id="home" data-setbg="img/bg4.jpg">
-		<div class="hero-content">
-			<h2>Hello, I'm Yansen Liu (Eason)</h2>
-			<i class="fa fa-angle-down"></i>
+	<section class="hero-section" id="home">
+		<div class="hero-container">
+			<div class="hero-slider owl-carousel">
+				<div class="hero-slide" style="background-image: url('img/排球/b2c93e6c091b8e57cd231ccd670b51c4.jpg');"></div>
+				<div class="hero-slide" style="background-image: url('img/篮球/图片_20251227230536_2330_28.jpg');"></div>
+				<div class="hero-slide" style="background-image: url('img/义工/56e67a7e603a4fcab6392b1a8dbbc4cd.jpg');"></div>
+				<div class="hero-slide" style="background-image: url('img/学校乐队/44434c68cf2d188aa1b2416cc74ff2b6.jpg');"></div>
+				<div class="hero-slide" style="background-image: url('img/篮球/bfd23109f474e20b3a06bfc94ea69aaa.jpg');"></div>
+				<div class="hero-slide" style="background-image: url('img/排球/556ca2a7b5197175114db33141d07d9e.jpg');"></div>
+				<div class="hero-slide" style="background-image: url('img/义工/90b6ff5a1bdaebb24b691d66114d5d21.jpg');"></div>
+				<div class="hero-slide" style="background-image: url('img/排球/图片_20251227230211_2322_28.jpg');"></div>
+				<div class="hero-slide" style="background-image: url('img/义工/3802d5013ed134dcdf55d4703ea07522.jpg');"></div>
+				<div class="hero-slide" style="background-image: url('img/排球/图片_20251227230530_2329_28.jpg');"></div>
+			</div>
+			<div class="hero-content">
+				<span class="hero-kicker">Student athlete • Musician • Community leader</span>
+				<h2>Hello, I'm Yansen Liu (Eason)</h2>
+				<p class="hero-subtitle">Sports, music, and design woven into one story — explore my highlights, awards, and projects below.</p>
+			</div>
 		</div>
 	</section>
 	<!-- Hero section end -->
@@ -80,7 +237,7 @@
 			<div class="row">
 				<div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
 					<figure>
-						<img src="img/计算机图形学个人作品获展览.jpg" alt="">
+						<img src="img/篮球/4e03ce7ab9ebac6c867c21928e653693.jpg" alt="">
 					</figure>
 				</div>
 				<div class="col-lg-6 about-text wow fadeInDown" data-wow-delay="0.5s">
@@ -180,10 +337,21 @@
 							<h3>Community Service Certificate</h3>
 							<h6>Nassau County Office of Asian American Affairs</h6>
 							<h6><p>Mid-Autumn Festival Volunteer Service</p></h6>
+							<div class="row mt-2 mb-2">
+								<div class="col-md-6">
+									<a href="img/义工证书.pdf" target="_blank" class="certificate-link">
+										<div class="certificate-preview" style="background: linear-gradient(135deg, #64748b 0%, #475569 100%); padding: 20px; border-radius: 10px; text-align: center; color: white; transition: transform 0.3s ease;">
+											<i class="fa fa-certificate" style="font-size: 40px; margin-bottom: 10px;"></i>
+											<h6 style="margin: 0; font-weight: bold;">Community Service</h6>
+											<small>Nassau County Certificate</small>
+										</div>
+									</a>
+								</div>
+							</div>
 							<h8>
 								<ul>
-									<li>Demonstrates commitment to community engagement and cultural event support</li>
-									<li>Showcases public service dedication and multicultural awareness</li>
+									<li>Nassau County certified community service volunteer</li>
+									<li>Mid-Autumn Festival cultural event support</li>
 									<li><a href="img/义工证书.pdf" target="_blank">View Certificate</a></li>
 								</ul>
 							</h8>
@@ -198,10 +366,21 @@
 							<h3>Basketball MVP & Championship</h3>
 							<h6>Grade 8 Class 12 Basketball Team</h6>
 							<h6><p>School Basketball Competition</p></h6>
+							<div class="row mt-2 mb-2">
+								<div class="col-md-6">
+									<a href="img/Grade8 篮球奖状.pdf" target="_blank" class="certificate-link">
+										<div class="certificate-preview" style="background: linear-gradient(135deg, #64748b 0%, #475569 100%); padding: 20px; border-radius: 10px; text-align: center; color: white; transition: transform 0.3s ease;">
+											<i class="fa fa-trophy" style="font-size: 40px; margin-bottom: 10px;"></i>
+											<h6 style="margin: 0; font-weight: bold;">Basketball MVP</h6>
+											<small>Grade 8 Championship</small>
+										</div>
+									</a>
+								</div>
+							</div>
 							<h8>
 								<ul>
-									<li>Demonstrates exceptional teamwork and athletic leadership skills</li>
-									<li>Highlights competitive achievement and team collaboration</li>
+									<li>Grade 8 Basketball MVP & Championship winner</li>
+									<li>Team leadership and athletic excellence</li>
 									<li><a href="img/Grade8 篮球奖状.pdf" target="_blank">View Certificate</a></li>
 								</ul>
 							</h8>
@@ -216,10 +395,21 @@
 							<h3>Police Youth Academy Course</h3>
 							<h6>Law Enforcement Training Program</h6>
 							<h6><p>Civic Education & Leadership Development</p></h6>
+							<div class="row mt-2 mb-2">
+								<div class="col-md-6">
+									<a href="img/POLICE YOUTH ACADEMY COURSE.pdf" target="_blank" class="certificate-link">
+										<div class="certificate-preview" style="background: linear-gradient(135deg, #64748b 0%, #475569 100%); padding: 20px; border-radius: 10px; text-align: center; color: white; transition: transform 0.3s ease;">
+											<i class="fa fa-shield" style="font-size: 40px; margin-bottom: 10px;"></i>
+											<h6 style="margin: 0; font-weight: bold;">Police Youth Academy</h6>
+											<small>Leadership Development</small>
+										</div>
+									</a>
+								</div>
+							</div>
 							<h8>
 								<ul>
-									<li>Demonstrates discipline, civic responsibility, and leadership potential</li>
-									<li>Highlights commitment to community safety and public service</li>
+									<li>Police Youth Academy graduate</li>
+									<li>Leadership development and civic education</li>
 									<li><a href="img/POLICE YOUTH ACADEMY COURSE.pdf" target="_blank">View Certificate</a></li>
 								</ul>
 							</h8>
@@ -234,10 +424,21 @@
 							<h3>Music Certificates</h3>
 							<h6>China Conservatory of Music & NYSSMA</h6>
 							<h6><p>Music Theory & Jazz Drum Performance</p></h6>
+							<div class="row mt-2 mb-2">
+								<div class="col-md-6">
+									<a href="img/DRUM 证书.pdf" target="_blank" class="certificate-link">
+										<div class="certificate-preview" style="background: linear-gradient(135deg, #64748b 0%, #475569 100%); padding: 20px; border-radius: 10px; text-align: center; color: white; transition: transform 0.3s ease;">
+											<i class="fa fa-music" style="font-size: 40px; margin-bottom: 10px;"></i>
+											<h6 style="margin: 0; font-weight: bold;">Music Certificate</h6>
+											<small>Jazz Drums & Theory</small>
+										</div>
+									</a>
+								</div>
+							</div>
 							<h8>
 								<ul>
-									<li>Demonstrates sustained musical training and performance skills</li>
-									<li>Shows dedication to artistic development and adjudicated feedback</li>
+									<li>China Conservatory & NYSSMA certified</li>
+									<li>Jazz drums and music theory excellence</li>
 									<li><a href="img/DRUM 证书.pdf" target="_blank">View Certificate</a></li>
 								</ul>
 							</h8>
@@ -252,10 +453,21 @@
 							<h3>Business Competition Awards</h3>
 							<h6>MicroBiz Jr / FBLA Competitions</h6>
 							<h6><p>Multiple Achievement Certificates</p></h6>
+							<div class="row mt-2 mb-2">
+								<div class="col-md-6">
+									<a href="img/商业比赛证书.pdf" target="_blank" class="certificate-link">
+										<div class="certificate-preview" style="background: linear-gradient(135deg, #64748b 0%, #475569 100%); padding: 20px; border-radius: 10px; text-align: center; color: white; transition: transform 0.3s ease;">
+											<i class="fa fa-briefcase" style="font-size: 40px; margin-bottom: 10px;"></i>
+											<h6 style="margin: 0; font-weight: bold;">Business Awards</h6>
+											<small>MicroBiz Jr & FBLA</small>
+										</div>
+									</a>
+								</div>
+							</div>
 							<h8>
 								<ul>
-									<li>Demonstrates leadership, teamwork, and business acumen</li>
-									<li>Includes 3rd place, Best Company, and Best Sales Manager awards</li>
+									<li>3rd place, Best Company & Best Sales Manager</li>
+									<li>MicroBiz Jr & FBLA competition achievements</li>
 									<li><a href="img/商业比赛证书.pdf" target="_blank">View Certificates</a></li>
 								</ul>
 							</h8>
@@ -295,40 +507,46 @@
 			<div class="row">
 				<div class="col-lg-10 col-xl-9 offset-lg-2 offset-xl-2">
 					<!-- Portfolio item -->
-					<div class="resume-item wow fadeInUp" data-wow-delay="0.1s">
-						<div class="resume-year">
-							<h4>2024</h4>
+					<div class="portfolio-item wow fadeInUp" data-wow-delay="0.1s" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border-radius: 15px; padding: 30px; margin-bottom: 30px; border-left: 4px solid #ffbc00;">
+						<div class="portfolio-header" style="display: flex; align-items: center; margin-bottom: 20px;">
+							<div class="portfolio-image" style="width: 80px; height: 80px; background: url('img/计算机图形学个人作品获展览.jpg') center/cover; border-radius: 10px; margin-right: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"></div>
+							<div>
+								<h3 style="margin: 0; color: #1e293b;">Computer Graphics Personal Collage</h3>
+								<h6 style="color: #64748b; margin: 5px 0;">Digital Art Exhibition Piece • 2024</h6>
+								<span style="background: #ffbc00; color: #1e293b; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">FEATURED WORK</span>
+							</div>
 						</div>
-						<div class="resume-text">
-							<h3>Computer Graphics Personal Collage</h3>
-							<h6>Photoshop, Digital Art, Visual Design</h6>
-							<br>
-							<h8>
-								<ul>
-									<li>Created a personal digital collage artwork showcasing creative vision and technical skills in computer graphics</li>
-									<li>Selected for school exhibition, demonstrating artistic merit and recognition by faculty</li>
-									<li>Combines personal expression with technical proficiency in digital media and visual composition</li>
-									<li><a href="img/计算机图形学个人作品获展览.jpg" target="_blank">View Artwork</a></li>
-								</ul>
-							</h8>
+						<div class="portfolio-content">
+							<p style="color: #475569; line-height: 1.6; margin-bottom: 15px;">Selected for school exhibition - a personal digital collage combining creative vision with technical computer graphics skills.</p>
+							<div style="display: flex; gap: 10px; flex-wrap: wrap;">
+								<span style="background: #e2e8f0; color: #475569; padding: 6px 12px; border-radius: 15px; font-size: 12px;">Photoshop</span>
+								<span style="background: #e2e8f0; color: #475569; padding: 6px 12px; border-radius: 15px; font-size: 12px;">Digital Art</span>
+								<span style="background: #e2e8f0; color: #475569; padding: 6px 12px; border-radius: 15px; font-size: 12px;">Visual Design</span>
+							</div>
+							<div style="margin-top: 15px;">
+								<a href="img/计算机图形学个人作品获展览.jpg" target="_blank" style="color: #ffbc00; font-weight: 600; text-decoration: none;">View Artwork →</a>
+							</div>
 						</div>
 					</div>
 					<!-- Portfolio item -->
-					<div class="resume-item wow fadeInUp" data-wow-delay="0.2s">
-						<div class="resume-year">
-							<h4>Ongoing</h4>
+					<div class="portfolio-item wow fadeInUp" data-wow-delay="0.2s" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border-radius: 15px; padding: 30px; margin-bottom: 30px; border-left: 4px solid #64748b;">
+						<div class="portfolio-header" style="display: flex; align-items: center; margin-bottom: 20px;">
+							<div class="portfolio-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #64748b 0%, #475569 100%); border-radius: 10px; margin-right: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+								<i class="fa fa-graduation-cap" style="font-size: 32px; color: white;"></i>
+							</div>
+							<div>
+								<h3 style="margin: 0; color: #1e293b;">Student Achievement Portfolio</h3>
+								<h6 style="color: #64748b; margin: 5px 0;">Multi-disciplinary Excellence • Ongoing</h6>
+								<span style="background: #64748b; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">COLLECTION</span>
+							</div>
 						</div>
-						<div class="resume-text">
-							<h3>Student Achievement Portfolio</h3>
-							<h6>Multi-disciplinary Excellence</h6>
-							<br>
-							<h8>
-								<ul>
-									<li>Comprehensive collection of certificates spanning academics, arts, sports, and leadership</li>
-									<li>Demonstrates versatility and commitment across multiple domains of interest</li>
-									<li>Showcases continuous learning and personal development journey</li>
-								</ul>
-							</h8>
+						<div class="portfolio-content">
+							<p style="color: #475569; line-height: 1.6; margin-bottom: 15px;">Comprehensive showcase of achievements across academics, arts, sports, and leadership - demonstrating continuous growth and versatile excellence.</p>
+							<div style="display: flex; gap: 10px; flex-wrap: wrap;">
+								<span style="background: #e2e8f0; color: #475569; padding: 6px 12px; border-radius: 15px; font-size: 12px;">Academic Excellence</span>
+								<span style="background: #e2e8f0; color: #475569; padding: 6px 12px; border-radius: 15px; font-size: 12px;">Athletic Achievement</span>
+								<span style="background: #e2e8f0; color: #475569; padding: 6px 12px; border-radius: 15px; font-size: 12px;">Community Leadership</span>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -340,16 +558,122 @@
 
 
 
-	<!-- Resume section start -->
+	<!-- Activities section start -->
 	<section class="resume-section spad" id="activities">
 		<div class="container">
 			<div class="section-title">
 				<p>Activities & Leadership</p>
 			</div>
-			<div class="row">
+			
+			<!-- Sports & Athletics Subsection -->
+			<div class="row mb-5">
+				<div class="col-lg-12">
+					<h3 class="mb-4" style="color: #666; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">🏀 Sports & Athletics</h3>
+				</div>
 				<div class="col-lg-10 col-xl-9 offset-lg-2 offset-xl-2">
-					<!-- Activity item -->
 					<div class="resume-item wow fadeInUp" data-wow-delay="0.1s">
+						<div class="resume-year">
+							<h4>2023-2024</h4>
+						</div>
+						<div class="resume-text">
+							<h3>Basketball & Volleyball Champion</h3>
+							<h6>School Athletic Teams - MVP & Team Leadership</h6>
+							<div class="row mt-3 mb-3">
+								<div class="col-md-4 mb-2">
+									<img src="img/篮球/图片_20251227230536_2330_28.jpg" alt="Basketball Team" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;">
+								</div>
+								<div class="col-md-4 mb-2">
+									<img src="img/排球/图片_20251227230211_2322_28.jpg" alt="Volleyball Competition" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;">
+								</div>
+								<div class="col-md-4 mb-2">
+									<img src="img/排球/图片_20251227230530_2329_28.jpg" alt="Team Victory" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;">
+								</div>
+							</div>
+							<h8>
+								<ul>
+									<li>Basketball MVP - Grade 8 Class 12 Championship Team</li>
+									<li>Volleyball team competitive achievements and leadership</li>
+									<li>Demonstrated exceptional teamwork and athletic performance</li>
+								</ul>
+							</h8>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Music & Performance Subsection -->
+			<div class="row mb-5">
+				<div class="col-lg-12">
+					<h3 class="mb-4" style="color: #666; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">🎵 Music & Performance</h3>
+				</div>
+				<div class="col-lg-10 col-xl-9 offset-lg-2 offset-xl-2">
+					<div class="resume-item wow fadeInUp" data-wow-delay="0.2s">
+						<div class="resume-year">
+							<h4>Ongoing</h4>
+						</div>
+						<div class="resume-text">
+							<h3>School Band & Music Performance</h3>
+							<h6>Jazz Drums & Music Theory Excellence</h6>
+							<div class="row mt-3 mb-3">
+								<div class="col-md-6 mb-2">
+									<img src="img/学校乐队/44434c68cf2d188aa1b2416cc74ff2b6.jpg" alt="School Band Performance" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;">
+								</div>
+							</div>
+							<h8>
+								<ul>
+									<li>Active member of school band with regular performances</li>
+									<li>China Conservatory of Music & NYSSMA certified</li>
+									<li>Jazz drum specialization with music theory foundation</li>
+								</ul>
+							</h8>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Community Service Subsection -->
+			<div class="row mb-5">
+				<div class="col-lg-12">
+					<h3 class="mb-4" style="color: #666; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">🤝 Community Service</h3>
+				</div>
+				<div class="col-lg-10 col-xl-9 offset-lg-2 offset-xl-2">
+					<div class="resume-item wow fadeInUp" data-wow-delay="0.3s">
+						<div class="resume-year">
+							<h4>2025</h4>
+						</div>
+						<div class="resume-text">
+							<h3>Volunteer Service & Community Engagement</h3>
+							<h6>Nassau County Mid-Autumn Festival & Community Events</h6>
+							<div class="row mt-3 mb-3">
+								<div class="col-md-4 mb-2">
+									<img src="img/义工/56e67a7e603a4fcab6392b1a8dbbc4cd.jpg" alt="Community Service" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;">
+								</div>
+								<div class="col-md-4 mb-2">
+									<img src="img/义工/90b6ff5a1bdaebb24b691d66114d5d21.jpg" alt="Volunteer Work" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;">
+								</div>
+								<div class="col-md-4 mb-2">
+									<img src="img/义工/图片_20251227231619_2332_28.jpg" alt="Community Event" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;">
+								</div>
+							</div>
+							<h8>
+								<ul>
+									<li>Nassau County Office of Asian American Affairs volunteer</li>
+									<li>Mid-Autumn Festival community event support</li>
+									<li>Demonstrates multicultural awareness and public service commitment</li>
+								</ul>
+							</h8>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Leadership Development Subsection -->
+			<div class="row">
+				<div class="col-lg-12">
+					<h3 class="mb-4" style="color: #666; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">👨‍💼 Leadership Development</h3>
+				</div>
+				<div class="col-lg-10 col-xl-9 offset-lg-2 offset-xl-2">
+					<div class="resume-item wow fadeInUp" data-wow-delay="0.4s">
 						<div class="resume-year">
 							<h4>2025</h4>
 						</div>
@@ -361,14 +685,12 @@
 								<ul>
 									<li>Completed comprehensive training program focusing on discipline, leadership, and community service</li>
 									<li>Developed understanding of civic responsibility and public safety principles</li>
-									<li>Demonstrated commitment to community engagement and personal development</li>
 									<li>Enhanced leadership skills through structured program activities</li>
 								</ul>
 							</h8>
 						</div>
 					</div>
-					<!-- Activity item -->
-					<div class="resume-item wow fadeInUp" data-wow-delay="0.2s">
+					<div class="resume-item wow fadeInUp" data-wow-delay="0.5s">
 						<div class="resume-year">
 							<h4>Various</h4>
 						</div>
@@ -381,7 +703,6 @@
 									<li>Led teams in multiple business competitions, earning recognition for leadership and strategic thinking</li>
 									<li>Achieved 3rd place overall and received Best Company and Best Sales Manager awards</li>
 									<li>Developed business acumen through practical application of entrepreneurial concepts</li>
-									<li>Demonstrated teamwork, communication, and project management skills</li>
 								</ul>
 							</h8>
 						</div>
@@ -390,7 +711,7 @@
 			</div>
 		</div>
 	</section>
-	<!-- Resume section end -->
+	<!-- Activities section end -->
 
 
 
@@ -432,13 +753,26 @@
 
 
 	<!-- Footer section start -->
-	<footer class="footer-section spad set-bg" data-setbg="img/footer-bg.svg">
+	<footer class="footer-section" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); padding: 60px 0 40px; margin-top: 80px;">
 		<div class="container">
-			<div class="social-links">
-				<!-- Add your social media links here -->
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div style="margin-bottom: 30px;">
+						<h4 style="color: #ffffff; font-weight: 600; margin-bottom: 15px;">Yansen Liu (Eason)</h4>
+						<p style="color: #94a3b8; font-size: 16px; line-height: 1.6; max-width: 500px; margin: 0 auto;">
+							Student athlete, musician, and community leader dedicated to excellence across academics, arts, and service.
+						</p>
+					</div>
+					<div class="social-links" style="margin-bottom: 30px;">
+						<!-- Social links can be added here when available -->
+					</div>
+					<div style="border-top: 1px solid #334155; padding-top: 25px;">
+						<p class="copyright" style="color: #64748b; margin: 0; font-size: 14px;">
+							Copyright &copy; 2025 Yansen Liu (Eason). Portfolio showcasing academic excellence and community leadership.
+						</p>
+					</div>
+				</div>
 			</div>
-			<!-- copyright -->
-			<p class="copyright">Copyright &copy; 2025 Yansen Liu (Eason).</p>
 		</div>
 	</footer>
 	<!-- Footer section end -->
