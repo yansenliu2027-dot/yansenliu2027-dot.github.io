@@ -160,7 +160,7 @@ $(window).on('load', function() {
 		nav: true,
 		dots: true,
 		autoplay: true,
-		autoplayTimeout: 4200,
+		autoplayTimeout: 3000,
 		autoplayHoverPause: true,
 		smartSpeed: 900,
 		navText: ['<i class="ti-arrow-left"></i>', '<i class="ti-arrow-right"></i>']
