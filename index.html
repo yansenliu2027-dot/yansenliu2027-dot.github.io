@@ -82,69 +82,198 @@
 		/* Hero section positioned below navigation */
 		.hero-section {
 			position: relative;
-			margin-top: 110px;
-			height: 80vh;
-			min-height: 560px;
-			max-height: 900px;
-			max-width: 1400px;
-			margin-left: auto;
-			margin-right: auto;
-			border-radius: 26px;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
 			overflow: hidden;
-			box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-			background: radial-gradient(120% 120% at 15% 15%, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0)) , linear-gradient(135deg, #0f172a 0%, #1f2937 65%, #111827 100%);
 		}
 		
 		.hero-section .hero-container {
 			height: 100%;
-			border-radius: 26px;
-			overflow: hidden;
+			width: 100%;
 			position: relative;
 		}
 		
-		.hero-slider,
-		.hero-slider .owl-stage-outer,
-		.hero-slider .owl-stage,
-		.hero-slider .owl-item,
-		.hero-slide {
-			height: 100%;
-		}
-		
-		.hero-slider {
+		.hero-video {
 			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
+			height: 100%;
+			object-fit: cover;
 			z-index: 0;
 		}
 		
-		.hero-slide {
-			position: relative;
-			width: 100%;
-			height: 100%;
-			background-size: cover;
-			background-position: center;
-			background-repeat: no-repeat;
-		}
-		
-		.hero-slide::after {
+		.hero-video::after {
 			content: "";
 			position: absolute;
 			inset: 0;
 			background: linear-gradient(180deg, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.55) 100%);
+			z-index: 1;
 		}
 		
 		.hero-content {
 			position: absolute;
-			z-index: 2;
+			z-index: 10;
 			color: white;
 			text-align: center;
-			bottom: 40px;
-			left: 50%;
+			bottom: 15%;
+			left: 62%;
 			transform: translateX(-50%);
-			max-width: 720px;
+			max-width: 900px;
 			width: 90%;
 			padding: 0 20px;
+		}
+		
+		.hero-content .hero-tagline {
+			display: block;
+			margin-bottom: 20px;
+			font-size: 18px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			font-weight: 500;
+			opacity: 0.95;
+			color: #ffffff;
+		}
+		
+		.hero-content .hero-description {
+			display: block;
+			margin-top: 20px;
+			font-size: 19px;
+			font-weight: 300;
+			line-height: 1.6;
+			opacity: 0.9;
+			color: #ffffff;
+			max-width: 700px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+		.hero-content h1 {
+			margin: 0 0 16px 0;
+			font-size: 72px;
+			font-weight: 700;
+			line-height: 1.1;
+			color: #ffffff;
+			text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+		}
+		
+		.hero-content .hero-subtitle {
+			display: block;
+			margin-bottom: 32px;
+			font-size: 20px;
+			font-weight: 300;
+			opacity: 0.9;
+			color: #ffffff;
+			line-height: 1.6;
+		}
+		
+		.hero-cta {
+			display: flex;
+			gap: 16px;
+			justify-content: center;
+			margin-top: 32px;
+		}
+		
+		.hero-cta a {
+			padding: 12px 32px;
+			border: 2px solid rgba(255, 255, 255, 0.8);
+			background: rgba(255, 255, 255, 0.1);
+			color: #ffffff;
+			text-decoration: none;
+			font-size: 14px;
+			font-weight: 500;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			border-radius: 4px;
+			transition: all 0.3s ease;
+			backdrop-filter: blur(10px);
+		}
+		
+		.hero-cta a:hover {
+			background: rgba(255, 255, 255, 0.2);
+			border-color: #ffffff;
+			transform: translateY(-2px);
+		}
+		
+		.video-sound-toggle {
+			position: absolute;
+			bottom: 40px;
+			right: 40px;
+			z-index: 10;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background: rgba(255, 255, 255, 0.15);
+			backdrop-filter: blur(10px);
+			border: 2px solid rgba(255, 255, 255, 0.3);
+			color: #ffffff;
+			font-size: 20px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.video-sound-toggle:hover {
+			background: rgba(255, 255, 255, 0.25);
+			border-color: rgba(255, 255, 255, 0.5);
+			transform: scale(1.1);
+		}
+		
+		.video-sound-toggle i {
+			pointer-events: none;
+		}
+		
+		.header-section {
+			position: fixed;
+			top: 30px;
+			width: 100%;
+			z-index: 100;
+			background: transparent;
+			transition: all 0.3s ease;
+		}
+		
+		.header-section.scrolled {
+			top: 0;
+		}
+		
+		.header-section.scrolled {
+			background: rgba(255, 255, 255, 0.95);
+			backdrop-filter: blur(10px);
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+			top: 0;
+		}
+		
+		.header-section .site-logo .logo-text {
+			color: #1e293b;
+			text-shadow: 0 1px 3px rgba(255, 255, 255, 0.3);
+			transition: all 0.3s ease;
+		}
+		
+		.header-section.scrolled .site-logo .logo-text {
+			color: #111111;
+			text-shadow: none;
+		}
+		
+		.header-section .site-menu .menu-list a {
+			color: #1e293b;
+			font-weight: 500;
+			text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
+			transition: all 0.3s ease;
+		}
+		
+		.header-section.scrolled .site-menu .menu-list a {
+			color: #111111;
+			text-shadow: none;
+		}
+		
+		.about-section {
+			position: relative;
+			z-index: 1;
+			background: white;
 		}
 		
 		.hero-content p {
@@ -153,23 +282,16 @@
 			margin-right: auto;
 		}
 		
-		.hero-section .owl-dots {
+		.hero-container::before {
+			content: "";
 			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-			bottom: 28px;
-			z-index: 3;
-			display: flex;
-			gap: 8px;
-		}
-		
-		.hero-section .owl-dots .owl-dot span {
-			width: 10px;
-			height: 10px;
-		}
-		
-		.hero-section .owl-dots .owl-dot.active span {
-			width: 24px;
+			inset: 0;
+			background: linear-gradient(180deg, 
+				rgba(0, 0, 0, 0.1) 0%, 
+				rgba(0, 0, 0, 0.3) 50%, 
+				rgba(0, 0, 0, 0.7) 100%);
+			z-index: 1;
+			pointer-events: none;
 		}
 		
 		.hero-subtitle {
@@ -177,6 +299,42 @@
 			margin-left: auto;
 			margin-right: auto;
 			max-width: 100%;
+		}
+		
+		/* 响应式设计 */
+		@media screen and (max-width: 768px) {
+			.hero-content h1 {
+				font-size: 42px;
+			}
+			
+			.hero-content .hero-tagline {
+				font-size: 10px;
+				letter-spacing: 2px;
+			}
+			
+			.hero-content .hero-subtitle {
+				font-size: 16px;
+			}
+			
+			.hero-cta {
+				flex-direction: column;
+				gap: 12px;
+			}
+			
+			.hero-cta a {
+				width: 100%;
+				max-width: 280px;
+			}
+		}
+		
+		@media screen and (max-width: 480px) {
+			.hero-content h1 {
+				font-size: 36px;
+			}
+			
+			.hero-content .hero-subtitle {
+				font-size: 14px;
+			}
 		}
 	</style>
 
@@ -199,7 +357,7 @@
 			<div class="header-warp">
 				<!-- Site Logo -->
 				<a href="#" class="site-logo">
-					<div class="logo-text">Eason</div>
+					<div class="logo-text"></div>
 				</a>
 				<!-- Site Menu -->
 				<div class="responsive-switch"><i class="fa fa-bars"></i></div>
@@ -224,21 +382,17 @@
 	<!-- Hero section start -->
 	<section class="hero-section" id="home">
 		<div class="hero-container">
-			<div class="hero-slider owl-carousel">
-				<div class="hero-slide" style="background-image: url('img/排球/b2c93e6c091b8e57cd231ccd670b51c4.jpg');"></div>
-				<div class="hero-slide" style="background-image: url('img/篮球/图片_20251227230536_2330_28.jpg');"></div>
-				<div class="hero-slide" style="background-image: url('img/义工/56e67a7e603a4fcab6392b1a8dbbc4cd.jpg');"></div>
-				<div class="hero-slide" style="background-image: url('img/学校乐队/44434c68cf2d188aa1b2416cc74ff2b6.jpg');"></div>
-				<div class="hero-slide" style="background-image: url('img/篮球/bfd23109f474e20b3a06bfc94ea69aaa.jpg');"></div>
-				<div class="hero-slide" style="background-image: url('img/排球/556ca2a7b5197175114db33141d07d9e.jpg');"></div>
-				<div class="hero-slide" style="background-image: url('img/义工/90b6ff5a1bdaebb24b691d66114d5d21.jpg');"></div>
-				<div class="hero-slide" style="background-image: url('img/排球/图片_20251227230211_2322_28.jpg');"></div>
-				<div class="hero-slide" style="background-image: url('img/义工/3802d5013ed134dcdf55d4703ea07522.jpg');"></div>
-				<div class="hero-slide" style="background-image: url('img/排球/图片_20251227230530_2329_28.jpg');"></div>
-			</div>
+			<video autoplay muted loop playsinline class="hero-video" id="heroVideo">
+				<source src="img/video.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+			<button class="video-sound-toggle" id="soundToggle" aria-label="Toggle sound">
+				<i class="fa fa-volume-off"></i>
+			</button>
 			<div class="hero-content">
-				<span class="hero-kicker">Student athlete • Musician • Community leader</span>
-				<h2>Hello, I'm Yansen Liu (Eason)</h2>
+				<h1>Yansen Liu (Eason)</h1>
+				<span class="hero-tagline">Student Athlete · Musician · Community Leader</span>
+				<p class="hero-description">Passionate about basketball, music performance, and community service. Dedicated to excellence in academics, arts, and leadership.</p>
 			</div>
 		</div>
 	</section>

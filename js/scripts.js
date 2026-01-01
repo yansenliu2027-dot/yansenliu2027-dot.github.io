@@ -72,6 +72,22 @@ $(window).on('load', function() {
 		}
 	});
 
+	/*------------------
+		Video Sound Toggle
+	--------------------*/
+	$('#soundToggle').on('click', function() {
+		var video = document.getElementById('heroVideo');
+		var icon = $(this).find('i');
+		
+		if (video.muted) {
+			video.muted = false;
+			icon.removeClass('fa-volume-off').addClass('fa-volume-up');
+		} else {
+			video.muted = true;
+			icon.removeClass('fa-volume-up').addClass('fa-volume-off');
+		}
+	});
+
 
 	/*------------------
 		Background set
